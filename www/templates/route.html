@@ -1,0 +1,16 @@
+<ion-view title="Route" left-buttons="leftButtons" ng-controller="RouteCtrl">
+  <ion-nav-buttons side="leftButtons">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content has-header="true" scroll="false" ng-controller="RouteCtrl">
+    <ul class="list location-list">
+      <li class="item dark">
+        Current location</li>
+      <li><a href="#/search" class="item" style="height: 50px;">{{destination.formatted_address}}</a></li>
+    </ul>
+    <div class="padding">
+      <a class="button button-block button-balanced" ng-click="get_direction()">Get direction</a>
+    </div>
+  </ion-content>
+</ion-view>
+

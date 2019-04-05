@@ -1,0 +1,135 @@
+
+/* Empty. Add your own CSS if you like */
+
+map {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.smallZoom{
+  -webkit-transform: scale(1.5);
+  right: 15px !important;
+  top: 20px !important;
+}
+
+.scroll {
+  height: 100%;
+}
+
+.ionic .list:last-child {
+  margin-bottom: 0px;
+}
+
+.ionic .list.location-list .item {
+  padding: 14px 15px 14px 15px;
+}
+
+#routing_list li.item{
+  padding: 3px !important;
+  border: none;
+}
+
+.maneuver-narrative{
+  border: solid 1px #444444;
+  border-radius: 3px;
+  padding: 5px;
+  white-space: normal !important;
+}
+.maneuver-narrative.total{
+  background-color: #78429a;
+  color: white;
+  font-size: 10pt;
+}
+.maneuver-narrative.selected{
+  padding: 0;
+}
+.maneuver-narrative.selected > div{
+  padding: 5px;
+}
+
+.narrative-text{
+  color: #888888;
+}
+
+.current-distance{
+  background-color: #002468;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  margin: 5px auto;
+  min-height: 40px;
+  width: 220px;
+  margin-bottom: 15px;
+}
+
+.current-distance.next{
+  background-color: yellowgreen;
+}
+
+
+.remain-time-text{
+  width: 140px;
+  display: block;
+  float: left;
+  white-space: normal;
+}
+
+.distance-text{
+  float: right;
+}
+
+.next-maneuver .title{
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.next-maneuver img{
+  width: 40px;
+  vertical-align: middle;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.next-maneuver .narrative{
+  font-size: 12pt;
+}
+
+.arrived-message{
+  color: green;
+  font-weight: bold;
+  font-size: 16pt;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  border: solid 1px green;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.blink-border{
+  height: 100%;
+  border: solid 3px white;
+}
+.blink.blink-red{
+  border: solid 3px red;
+}
+
+.home-location{
+  position: absolute;
+  z-index: 10000;
+  right: 10px;
+  top: 10px;
+  width: 35px;
+  height: 38px;
+}
+
+.home-location i{
+  font-size: 30pt;
+}
+
+
+.ion-load-d:before, .ion-loading-d:before{
+  content: "\f29c" !important;
+  font-size: 30pt;
+}

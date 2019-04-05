@@ -1,0 +1,31 @@
+<ion-view title="Search" left-buttons="leftButtons">
+  <ion-nav-buttons side="leftButtons">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content scroll="true" padding="true" has-header="true">
+    <!--label class="item item-input">
+      <input type="text" placeholder="Address" ng-keyup="suggest($event)" />
+    </label-->
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="Address" id="txtAddress" value="">
+      </label>
+      <button class="button button-small button-positive" ng-click="search_by_mapq()">
+        Search
+      </button>
+    </div>
+    <ion-list>
+      <!--ion-item ng-repeat="address in addresses | limitTo:5" ng-click="select_address(address)">
+        <i class="icon ion-location"></i>
+        {{address.formatted_address}}
+      </ion-item-->
+      <ion-radio ng-repeat="address in addresses | limitTo:5" ang-model="choice" ang-value="{{address.formatted_address}}" ng-click="select_address(address)">
+        <i class="icon ion-location"></i>
+        {{address.formatted_address}}
+      </ion-radio>
+    </ion-list>
+    <a class="button button-balanced button-block" ahref="#/route" ng-click="add_route()">
+      Add Destination
+    </a>
+  </ion-content>
+</ion-view>

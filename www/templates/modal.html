@@ -1,0 +1,19 @@
+<div class="modal">
+  <ion-header-bar>
+    <h2 class="text-left title">To {{destination.name}},{{destination.country}}</h2>
+    <div class="buttons">
+      <button class="button button-positive stable-bg button-small" ng-click="closeModal()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content has-scroll="false">
+
+    <app-map style="height: 100%;"
+             center="basel"
+             zoom="15"
+             markers="whoiswhere"
+        >
+
+    </app-map>
+  </ion-content>
+</div>
+

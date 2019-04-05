@@ -1,0 +1,29 @@
+<ion-side-menus>
+  <ion-pane ion-side-menu-content ng-controller='HeaderCtrl'>
+    <ion-nav-bar class="bar-dark" left-buttons="leftButtons">
+
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-pane>
+
+  <ion-side-menu>
+    <header class="bar bar-header bar-dark">
+      <div class="title">GPS Mobile</div>
+    </header>
+    <ion-content class="has-header" >
+      <ul class="list">
+        <li><a href="#/search" nav-clear menu-close class="item item-icon-left">
+          <i class="icon ion-ios7-search"></i>
+          Search
+        </a></li>
+        <li><a href="#/route" nav-clear menu-close class="item item-icon-left">
+          <i class="icon ion-location"></i>
+          Route
+        </a></li>
+        <li><a href="#/map" nav-clear menu-close class="item item-icon-left"><i
+            class="icon ion-earth"></i>Map
+        </a></li>
+      </ul>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

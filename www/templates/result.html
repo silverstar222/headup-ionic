@@ -1,0 +1,60 @@
+<ion-view title="Direction to {{destination.formatted_address}}" ng-controller="ResultCtrl">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-more" ng-click="openPopover($event)"></button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header" scroll="true">
+    <div id="routing_list" style="height: 100%; " ng-show="viewmode=='list'">
+      <ul class="item-list">
+        <li class="item arrived-item hide" ng-show="passed_indice.length>=maneuvers.length">
+          <div class="arrived-message">
+            <strong>Welcome, arrived!</strong></div>
+        </li>
+
+        <li class="item" ng-if="passed_indice.length<maneuvers.length">
+          <div class="maneuver-narrative">Head <strong>{{heading_text}}</strong>
+            <span class="narrative-text">{{maneuvers[left_index].narrative}}</span></div>
+        </li>
+        <li ng-repeat="maneuver in maneuvers" class="item">
+
+          <div ng-if="$index==arrive_index && current_distance>=0.01">
+            <div class="current-distance">
+              <span ng-if="speed>0" class="remain-time-text">{{hms((current_distance*1609.344)/speed)}}</span>
+              <span class="distance-text">{{current_distance.toFixed(2)}} mi</span>
+              <div class="clearfix"></div>
+            </div>
+            <div class="maneuver-narrative selected">
+              <div class="blink-border" ng-class="{'blink': (current_distance*1609.344/speed)<60}">
+                <span class="title">Next:</span>
+                <img src="{{maneuver.iconUrl}}" />
+                <span class="narrative-text">{{maneuver.narrative}}</span>
+              </div>
+            </div>
+          </div>
+
+          <div ng-if="$index > arrive_index">
+            <div class="current-distance next">
+              <span ng-if="speed>0" class="remain-time-text">{{hms((maneuvers[$index-1].distance*1609.344)/speed)}}</span>
+              <span class="distance-text">{{maneuvers[$index-1].distance.toFixed(2)}} mi</span>
+              <div class="clearfix"></div>
+            </div>
+            <div class="maneuver-narrative">
+              <span class="narrative-text">{{maneuver.narrative}}</span>
+            </div>
+          </div>
+
+
+        </li>
+        <li class="item total-item">
+          <div class="maneuver-narrative total">
+            Total Remaining: {{hms(total_remaining_distance*1609.344/speed)}},
+            &nbsp;{{total_remaining_distance.toFixed(2)}} mi<br>
+            Destination: {{destination.formatted_address}}
+          </div>
+        </li>
+      </ul>
+    </div>
+    <app-map style="height: 100%; " center="basel" zoom="15" markers="whoiswhere" ng-show="viewmode=='map'"></app-map>
+    <div class='home-location' ng-show="viewmode=='map'" ng-click="goto_homelocation()"><i class='ion-ios7-navigate'></i></div>
+  </ion-content>
+</ion-view>

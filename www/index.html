@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>HeadsUp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Map App</title>
+
+    <link href="lib/ionic/css/ionic.min.css" rel="stylesheet">
+    <link href="css/style.css?_=2" rel="stylesheet"/>
+    <link href="css/leaflet.css" rel="stylesheet"/>
+
+    <script src="js/functions.js"></script>
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/mq-map.js"></script>
+    <script src="js/mq-routing.js"></script>
+    <script src="js/jquery.min.js"></script>
+
+
+    <script src="cordova.js"></script>
+
+  </head>
+
+  <body ng-app="MapApp" class="platform-ios">
+    <div ng-controller="MainCtrl">
+      <ion-nav-view></ion-nav-view>
+    </div>
+
+    <div id='map_status' style='display: none; position: fixed; z-index: 100000; bottom: 0; left:0; 
+    width: 300px; height: 50px; background-color: green; '></div>
+
+
+    <script src="js/index.js?_=1"></script>
+    <script src="controllers/main.js"></script>
+    <script src="controllers/home.js"></script>
+    <script src="controllers/search.js"></script>
+    <script src="controllers/route.js"></script>
+    <script src="controllers/result.js"></script>
+    <script src="controllers/header.js"></script>
+    <script src="controllers/map.js"></script>
+    <script src="directives/map.js"></script>
+
+    <script src="services/loader.js"></script>
+  </body>
+</html>
